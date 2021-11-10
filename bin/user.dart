@@ -18,6 +18,10 @@ class User {
 
   final int _id;
   final String _name;
+  bool get isBigId => _id > 1000;
+
+  int get id => _id;
+  String get name => _name;
 
   String toJson() {
     return '{"id": "$_id", "name": "$_name"}';
