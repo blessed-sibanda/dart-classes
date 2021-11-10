@@ -1,7 +1,7 @@
 void main(List<String> arguments) {
-  final user = User();
-  user.name = 'Blessed';
-  user.id = 42;
+  final user = User()
+    ..name = 'Blessed'
+    ..id = 42;
   print(user);
   print(user.toJson());
 }
