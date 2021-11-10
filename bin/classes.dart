@@ -1,5 +1,5 @@
 void main(List<String> arguments) {
-  final user = User(45, 'Blessed Sibanda');
+  final user = User(id: 45, name: 'Blessed Sibanda');
   print(user);
   print(user.toJson());
   final anonymousUser = User.anonymous();
@@ -8,9 +8,9 @@ void main(List<String> arguments) {
 }
 
 class User {
-  User(this.id, this.name);
+  User({this.id = 0, this.name = 'anonymous'});
 
-  User.anonymous() : this(0, 'anonymous');
+  User.anonymous() : this();
 
   int id;
   String name;
