@@ -1,12 +1,13 @@
 class User {
-  User({int id = 0, String name = 'anonymous'})
-      : _id = id,
+  const User({int id = 0, String name = 'anonymous'})
+      : assert(id >= 0),
+        _id = id,
         _name = name;
 
-  User.anonymous() : this();
+  const User.anonymous() : this();
 
-  int _id;
-  String _name;
+  final int _id;
+  final String _name;
 
   String toJson() {
     return '{"id": "$_id", "name": "$_name"}';
