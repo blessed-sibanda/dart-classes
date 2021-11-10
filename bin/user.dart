@@ -1,5 +1,6 @@
 class User {
-  const User({this.id = 0, this.name = 'anonymous'}) : assert(id >= 0);
+  const User({this.id = _anonymousId, this.name = _anonymousName})
+      : assert(id >= 0);
 
   const User.anonymous() : this();
 
@@ -15,6 +16,10 @@ class User {
 
   final int id;
   final String name;
+
+  static const _anonymousId = 0;
+  static const _anonymousName = 'anonymous';
+
   bool get isBigId => id > 1000;
 
   String toJson() {

@@ -30,8 +30,28 @@ void main(List<String> arguments) {
   email.value = 'ble@example.com';
   final emailString = email.value;
   print(emailString);
+
+  final value = SomeClass.myProperty;
+  print(value);
+  SomeClass.myMethod();
+
+  final mySingleton = MySingleton();
+  print(mySingleton);
+}
+
+class MySingleton {
+  MySingleton._();
+  static final MySingleton _instance = MySingleton._();
+  factory MySingleton() => _instance;
 }
 
 class MyClass {
   var myProperty = 1;
+}
+
+class SomeClass {
+  static int myProperty = 0;
+  static void myMethod() {
+    print('Hello, Dart!');
+  }
 }
