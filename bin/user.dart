@@ -1,8 +1,5 @@
 class User {
-  const User({int id = 0, String name = 'anonymous'})
-      : assert(id >= 0),
-        _id = id,
-        _name = name;
+  const User({this.id = 0, this.name = 'anonymous'}) : assert(id >= 0);
 
   const User.anonymous() : this();
 
@@ -16,19 +13,16 @@ class User {
     return User(id: userId, name: userName);
   }
 
-  final int _id;
-  final String _name;
-  bool get isBigId => _id > 1000;
-
-  int get id => _id;
-  String get name => _name;
+  final int id;
+  final String name;
+  bool get isBigId => id > 1000;
 
   String toJson() {
-    return '{"id": "$_id", "name": "$_name"}';
+    return '{"id": "$id", "name": "$name"}';
   }
 
   @override
   String toString() {
-    return 'User(id: $_id, name: $_name)';
+    return 'User(id: $id, name: $name)';
   }
 }
