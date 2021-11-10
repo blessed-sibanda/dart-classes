@@ -1,4 +1,6 @@
 import 'email.dart';
+import 'sphere.dart';
+import 'student.dart';
 import 'user.dart';
 
 void main(List<String> arguments) {
@@ -37,6 +39,15 @@ void main(List<String> arguments) {
 
   final mySingleton = MySingleton();
   print(mySingleton);
+
+  final bert = Student('Bert', 'White', 95);
+  final ernie = Student('Ernie', 'Samson', 85);
+  print(bert);
+  print(ernie);
+
+  final mySphere = Sphere(radius: 12);
+  print(mySphere.volume.toStringAsFixed(2));
+  print(mySphere.surfaceArea.toStringAsFixed(2));
 }
 
 class MySingleton {
