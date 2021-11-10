@@ -6,6 +6,16 @@ class User {
 
   const User.anonymous() : this();
 
+  factory User.blessed() {
+    return User(id: 1, name: 'Blessed');
+  }
+
+  factory User.fromJson(Map<String, dynamic> json) {
+    final userId = json['id'] as int;
+    final userName = json['name'] as String;
+    return User(id: userId, name: userName);
+  }
+
   final int _id;
   final String _name;
 
