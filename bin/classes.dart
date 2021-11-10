@@ -8,19 +8,21 @@ void main(List<String> arguments) {
 }
 
 class User {
-  User({this.id = 0, this.name = 'anonymous'});
+  User({int id = 0, String name = 'anonymous'})
+      : _id = id,
+        _name = name;
 
   User.anonymous() : this();
 
-  int id;
-  String name;
+  int _id;
+  String _name;
 
   String toJson() {
-    return '{"id": "$id", "name": "$name"}';
+    return '{"id": "$_id", "name": "$_name"}';
   }
 
   @override
   String toString() {
-    return 'User(id: $id, name: $name)';
+    return 'User(id: $_id, name: $_name)';
   }
 }
